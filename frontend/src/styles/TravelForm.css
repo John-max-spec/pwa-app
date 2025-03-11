@@ -1,0 +1,122 @@
+/* TravelForm.css */
+
+/* Go Back Button */
+.go-back {
+  background: none;
+  border: none;
+  color: #0a3d62;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 3rem;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+}
+
+.go-back:hover {
+  text-decoration: underline;
+}
+
+.location-inputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.location-inputs label {
+  font-weight: 600;
+  margin: 0.5rem 0 0.2rem;
+  color: #333;
+}
+
+.location-inputs input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+
+.travel-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .travel-form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .travel-form input[type="text"],
+  .travel-form textarea,
+  .travel-form input[type="file"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .travel-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .travel-form button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color:#0a3d62;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .travel-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .travel-form p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .travel-form img {
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .travel-form {
+      padding: 1rem;
+    }
+
+    .go-back {
+      font-size: 0.95rem;
+      margin-left: 0.25rem;
+    }
+  
+  
+    .travel-form h2 {
+      font-size: 1.25rem;
+    }
+  
+    .travel-form input[type="text"],
+    .travel-form textarea,
+    .travel-form button {
+      font-size: 0.95rem;
+    }
+  }
+  
