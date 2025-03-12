@@ -4,6 +4,7 @@ import { BASE_URL } from "../utils/config";
 import "../styles/TravelList.css";
 import "../styles/TravelItem.css";
 import { useNavigate } from "react-router-dom";
+import { addToQueue } from "../utils/offlineQueue";
 
 const TravelList = () => {
   const [trips, setTrips] = useState([]);
@@ -36,6 +37,11 @@ const TravelList = () => {
 
   // Delete a trip
   const handleDelete = async (id) => {
+    if (!navigator.onLine) {
+      addToQueue({ type: 'DELETE', id });
+      alert('Trip queued for deletion when back online.');
+      return;
+    }
     const confirm = window.confirm("Are you sure you want to delete this trip?");
     if (!confirm) return;
 
@@ -50,6 +56,11 @@ const TravelList = () => {
 
   // Update a trip (redirect to an update form, or you can use a modal)
   const handleUpdate = (trip) => {
+    if (!navigator.onLine) {
+      addToQueue({ type: 'UPDATE', trip: trip });
+      alert('Update queued for when you’re back online.');
+      return;
+    }
     // For now, we’ll log the data; you can navigate or open a modal here
     navigate(`/update-trip/${trip._id}`);
     console.log("Update trip clicked:", trip);
