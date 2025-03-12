@@ -34,7 +34,7 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/trip-diary-backend\.onrender\.com\/api\/trips/,
+            urlPattern:/^https:\/\/trip-diary-backend\.onrender\.com\/api\/.*/,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'api-cache',
